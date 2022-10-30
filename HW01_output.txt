@@ -1,0 +1,29 @@
+物件導向程式設計第一次作業
+N16110158 王漢祺
+點數目 : 16
+最接近 x+5.2y+4.1z = -1.9的點 : (-10.11, 0.01, 0.74)、距離為 : 0.765117
+//////////\\\\\\\\\\
+8-1
+#4  std::string Coutinformation(const Point&); 
+引數傳入為不可變動的結構(Point)參考(pass by reference)
+回傳值為字串(string)型別的值(pass by value), 也就是複製他的值到新的記憶體區域
+
+#5  std::string Coutinformation(const Plane&); 
+引數傳入為不可變動的結構(Plane)參考(pass by reference)
+回傳值為字串(string)型別的值(pass by value), 也就是複製他的值到新的記憶體區域
+
+#6  Point* LoadPoint(const char* filename, unsigned int& nPoint); 
+引數傳入為不可變動的字元指標(char*)(pass by pointer)以及無號整數(unsigned int)的參考(pass by reference)
+回傳值為結構指標(Point*)(pass by pointer)
+
+#7  Point* MinDistance(const Point*&, const Plane&, unsigned int& nPoint, double&); 
+引數傳入的是不可變動的結構指標(Point*)參考(pass by reference), 不可改變的結構(Plane)參考(pass by reference), 無號整數(unsigned int)的參考(pass by reference)以及雙精度浮點數(double)的參考(pass by reference)
+回傳值為結構指標(Point*)(pass by pointer)
+
+#8  void Report(const char* filename, Point& , unsigned int& , double&); 
+引數傳入為不可變動的字元指標(char*)(pass by pointer), 無號整數(unsigned int)的參考(pass by reference)以及雙精度浮點數(double)的參考(pass by reference)
+而回傳值則為空(void)
+
+8-2
+可行, 使用reference的上手難易度比起使用指標低, 並且使用reference在傳入參數(call function)的時候需要使用const宣告的變數
+但是這兩個都不會再複製一個新的值到其他記憶體空間
