@@ -163,26 +163,7 @@ Link_list::Link_list(const Link_list& foo)
 	head = makenode(foo.head->data);
 	LNode* tmp = foo.head;
 	LNode* tmp2 = head;
-	/*int count = 0;
-	LNode* ori = foo.head;
-	if (ori == NULL)
-	{
-		count = 0;
-	}
-	else if (ori->next == NULL)
-	{
-		count = 1;
-	}
-	else
-	{
-		ori = ori->next;
-		count++;
-		while (ori != foo.head)
-		{
-			ori = ori->next;
-			count++;
-		}
-	}*/
+	
 	for (int i = 1; i < foo.element_count(); i++)
 	{
 		tmp = tmp->next;
@@ -201,25 +182,7 @@ Link_list::~Link_list()
 	LNode* tmp = head;
 	LNode* del;
 	int count = this->element_count();
-	/*LNode* ori = head;
-	if (ori == NULL)
-	{
-		count = 0;
-	}
-	else if (ori->next == NULL)
-	{
-		count = 1;
-	}
-	else
-	{
-		ori = ori->next;
-		count++;
-		while (ori != head)
-		{
-			ori = ori->next;
-			count++;
-		}
-	}*/
+	
 	for (int i = 0; i < count; i++)
 	{
 		del = tmp;
@@ -236,25 +199,6 @@ Link_list& Link_list::operator=(const Link_list& foo)
 {
 	if (this == &foo)	return *this;		//如果等於自己, 就回傳回去
 	int count = this->element_count();
-	/*LNode* ori = head;
-	if (ori == NULL)
-	{
-		count = 0;
-	}
-	else if (ori->next = NULL)
-	{
-		count = 1;
-	}
-	else
-	{
-		ori = ori->next;
-		count++;
-		while (ori != head)
-		{
-			ori = ori->next;
-			count++;
-		}
-	}*/
 	
 	if (count != 0)
 	{
@@ -276,24 +220,6 @@ Link_list& Link_list::operator=(const Link_list& foo)
 	LNode* tmp2 = head;
 	LNode* ori2 = foo.head;
 	int count2 = foo.element_count();
-	/*if (ori2 == NULL)
-	{
-		count2 = 0;
-	}
-	else if (ori2->next == NULL)
-	{
-		count2 = 1;
-	}
-	else
-	{
-		ori2 = ori2->next;
-		count2++;
-		while (ori2 != foo.head)
-		{
-			ori2 = ori2->next;
-			count2++;
-		}
-	}*/
 	for (int i = 1; i < count2; i++)
 	{
 		tmp = tmp->next;
@@ -419,10 +345,12 @@ Point* Link_list::erase(const unsigned int foo)
 			tmp = tmp->next;
 		}
 		remove = head;
+		Point* ra = new Point{*remove->data};
 		after_next = head->next;
 		tmp->next = after_next;
 		head = after_next;
-		return remove->data;
+		delete remove;
+		return ra;
 	}
 	//假如要移除的點不是head的話
 	for (int i = 0; i < foo - 1; i++)
@@ -431,9 +359,11 @@ Point* Link_list::erase(const unsigned int foo)
 	}
 	after_next = tmp->next->next;
 	remove = tmp->next;
+	Point* ra = new Point{ *remove->data };
 	tmp->next = after_next;
+	delete remove;
 	//size--;
-	return remove->data;
+	return ra;
 }
 
 

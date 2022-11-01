@@ -128,14 +128,20 @@ int main(int argc, char* argv[])
 
 	// test erase
 	//此項目要測試的是去掉點並且把點輸出出來, 而erase()裡面的值存著的是要去除的第幾個點
+	Point* test_erase;
 	cout << "test erase" << endl;
 	int erase1 = 0, erase2 = 3;
 	//下面會去除掉第0的點也就是開頭
-	cout << "The remove node is " << erase1 << ", and the point is " << *test.erase(erase1);
+	test_erase = test.erase(erase1);
+	cout << "The remove node is " << erase1 << ", and the point is " << *test_erase;
 	cout << test << endl;
+	delete test_erase;
 	//要去除的是第三個點也就是做完上面步驟後的串列在去除掉第3個點
-	cout << "The remove node is " << erase2 << ", and the point is " << *test.erase(erase2);
+	Point* test_erase2;
+	test_erase2 = test.erase(erase2);
+	cout << "The remove node is " << erase2 << ", and the point is " << *test_erase2;
 	cout << test << endl;
+	delete test_erase2;
 	// test ostream operator
 	//此項目要測試的是輸出運算子
 	cout << "test ostream operator" << endl;
@@ -168,8 +174,13 @@ int main(int argc, char* argv[])
 	test2_constructor.insert(test_insert, 3);
 	cout << test2_constructor << endl;
 	cout << "test erase node" << endl;
-	cout << "The remove node is " << erase1 << ", and the point is " << *test2_constructor.erase(erase1);
-	cout << "The remove node is " << erase2 << ", and the point is " << *test2_constructor.erase(erase2);
+	Point* test2_erase1, * test2_erase2;
+	test2_erase1 = test2_constructor.erase(erase1);
+	test2_erase2 = test2_constructor.erase(erase2);
+	cout << "The remove node is " << erase1 << ", and the point is " << *test2_erase1;
+	cout << "The remove node is " << erase2 << ", and the point is " << *test2_erase2;
+	delete test2_erase1;
+	delete test2_erase2;
 	cout << test2_constructor << endl;
 	 
 	 
@@ -186,9 +197,9 @@ int main(int argc, char* argv[])
 		y = (float)(rand() % 200) / 7;
 		z = (float)(rand() % 300) / 7;
 		Point* test3_insert = new Point{ x, y, z };
-		cout << i << "\t" << *test3_insert << endl;
+		//cout << i << "\t" << *test3_insert << endl;
 		test3.insert(test3_insert, 0);
-		cout << test3.element_count() << endl;
+		//cout << test3.element_count() << endl;
 		delete test3_insert;
 	}
 	cout << test3 << endl;
