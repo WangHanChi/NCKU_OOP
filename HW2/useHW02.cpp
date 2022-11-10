@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 	cout << test << endl;
 
 	// test assignment operator
-	//此項目要測試的是複製運算子
+	//此項目要測試的是賦值運算子
 	cout << "test assignment operator" << endl;
 	Link_list test_assignment;
 	test_assignment = test;

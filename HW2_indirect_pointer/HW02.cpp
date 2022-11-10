@@ -151,20 +151,6 @@ Link_list::Link_list(Point* point, int num)
 		count++;
 	}
 	(*indirect)->next = head;
-
-	////size = (unsigned int)num;	//設定size進去
-	//LNode* current;
-	//head = makenode(point);		//new一個新的node出來
-	//LNode* tmp = head;
-
-	//for (int i = 1; i < num; i++)
-	//{
-	//	current = makenode(point + i);
-	//	tmp->next = current;
-	//	tmp = current;
-	//	//新增一個node, 並且將指向next指向正確的node
-	//}
-	//tmp->next = head;	//將最後一個node指向head
 }
 
 
@@ -186,36 +172,11 @@ Link_list::Link_list(const Link_list& foo)
 		ptr = &(*ptr)->next;
 	}
 	(*ptr)->next = head;
-	//head = makenode(foo.head->data);
-	//LNode* tmp = foo.head;
-	//LNode* tmp2 = head;
-	//
-	//for (int i = 1; i < foo.element_count(); i++)
-	//{
-	//	tmp = tmp->next;
-	//	LNode* current = makenode(tmp->data);
-	//	tmp2->next = current;
-	//	tmp2 = current;
-	//	//將foo的每個點都加入到自己裡面
-	//}
-	//tmp2->next = head;
-	////將最後一個node指向head
 }
 
 // destructor
 Link_list::~Link_list()
 {
-	/*LNode** indirect = &head, *tmp;
-	while ((*indirect)->next != NULL)
-	{
-		tmp = (*indirect);
-		indirect = &(*indirect)->next;
-		cout << "delete node : " << *(tmp->data) << endl;
-		cout << "the next node is : " << *((*indirect)->data) << endl;
-		delete tmp->data;
-		delete tmp;
-	}
-	return;*/
 	if (head == NULL)
 	{
 		cout << "There is empty in the linked_list, and cannot be destruct!!! " << endl;
@@ -275,40 +236,6 @@ Link_list& Link_list::operator=(const Link_list& foo)
 	}
 	(*ptr)->next = head;
 	return *this;
-	//if (this == &foo)	return *this;		//如果等於自己, 就回傳回去
-	//int count = this->element_count();
-	//
-	//if (count != 0)
-	//{
-	//	LNode* tmp = head, *del;
-	//	for (int i = 0; i < count; i++)
-	//	{
-	//		del = tmp;
-	//		tmp = tmp->next;
-	//		delete del->data;
-	//		delete del;
-	//		//先釋放node裡面的data, 在釋放node
-	//	}
-	//	count = 0;
-	//}
-	//
-	//LNode* ptr = makenode(foo.head->data);
-	//head = ptr;			//先設定head
-	//LNode* tmp = foo.head;
-	//LNode* tmp2 = head;
-	//LNode* ori2 = foo.head;
-	//int count2 = foo.element_count();
-	//for (int i = 1; i < count2; i++)
-	//{
-	//	tmp = tmp->next;
-	//	LNode* current = makenode(tmp->data);
-	//	tmp2->next = current;
-	//	tmp2 = current;
-	//}
-	//tmp2->next = head;
-	////將最後一個node指向head
-
-	//return *this;
 }
 
 // insert function with Point* and unsigned int
@@ -343,61 +270,6 @@ void Link_list::insert(Point* point, const unsigned int foo = 0)
 	(*indirect)->next = add_node;
 	
 	return;
-	//int count = this->element_count();
-	//
-	//if (foo > count)
-	//{
-	//	cout << "The insert place cannot be larger than itself!!!" << endl;
-	//	return;
-	//	//如果要輸入的位置大於node個數的話, 就輸出提醒並且回傳
-	//}	
-	//LNode* add_node = makenode(point);
-	//LNode* old_head = head;
-	//LNode* tmp = head, *tmp2, *tmp3;
-	//if (foo == 0)		//假如insert的位置是head的話
-	//{
-	//	cout << count << endl;
-	//	if (count == 0)
-	//	{
-	//		head = add_node;
-	//		return;
-	//	}
-	//	if (count == 1)
-	//	{
-	//		head->next = add_node;
-	//		add_node->next = head;
-	//		head = add_node;
-
-	//		return;
-	//	}
-	//	else if(count >= 2)
-	//	{
-	//		add_node->next = head;
-	//		tmp2 = head;
-	//		tmp = tmp2->next;
-	//		while (tmp2->next != head)
-	//		{
-	//			tmp2 = tmp2->next;
-	//		}
-	//		tmp2->next = add_node;
-	//		head = add_node;
-
-	//		return;
-	//	}
-	//	
-	//}
-	//else if(foo >= 1)				//假如insert的位置不是head的話
-	//{
-	//	tmp = head;
-	//	for (int i = 0; i < foo - 1; i++)
-	//	{
-	//		tmp = tmp->next;
-	//	}
-	//	tmp3 = tmp->next;
-	//	tmp->next = add_node;
-	//	add_node->next = tmp3;
-	//	return;
-	//}
 }
 
 // insert function with link_list
@@ -421,34 +293,6 @@ void Link_list::insert(Link_list* input)
 	idt = &(*idt)->next;
 	indirect = &(*indirect)->next;
 	(*indirect)->next = head;
-
-	//if (input->element_count() == 0)
-	//{
-	//	cout << "The insert linked_list cannot be zero node" << endl;
-	//	return;
-	//	//假如輸入進來的linked_list的node數量是0的話, 就輸出提醒並且回傳
-	//}
-	//LNode* tmp = head;
-	//int count = this->element_count();
-	//
-	//for (int i = 0; i < count - 1 ; i++)
-	//{
-	//	tmp = tmp->next;
-	//}			//	先把指到自己的最後一個node
-	//LNode* ptr = makenode(input->head->data);
-	//LNode* input_tmp = input->head;
-	//tmp->next = ptr;
-	//tmp = ptr;
-	//input_tmp = input_tmp->next;
-	//for (int i = 1; i < input->element_count(); i++)
-	//{
-	//	ptr = makenode(input_tmp->data);
-	//	tmp->next = ptr;
-	//	tmp = ptr;
-	//	input_tmp = input_tmp->next;
-	//}
-	//tmp->next = head;
-	////size += input->size;
 }
 
 
@@ -456,18 +300,22 @@ void Link_list::insert(Link_list* input)
 // erase function
 Point* Link_list::erase(const unsigned int foo)
 {
-	/*if (foo > element_count()) return NULL;
+	if (foo > element_count()) return NULL;
 	Point* ra;
 	LNode** indirect = &head, *del;
 	if (foo == 0)
 	{
 		del = head;
-		ra = new Point{ *head->data };
+		ra = new Point{ *(head->data) };
 		while ((*indirect)->next != head)
 			indirect = &(*indirect)->next;
-		indirect = &(*indirect)->next;
+		cout << *(*indirect)->data << endl;
+		//indirect = &(*indirect)->next;
+		(*indirect)->next = head->next;
+		cout << "&&" << *(head->data) << endl;
 		head = head->next;
-		head = (*indirect)->next;
+		cout << "$$" << *(head->data) << endl;
+		
 		delete del->data;
 		delete del;
 		return ra;
@@ -475,45 +323,10 @@ Point* Link_list::erase(const unsigned int foo)
 	for (int i = 0; i < foo - 1; i++)
 		indirect = &(*indirect)->next;
 	del = (*indirect)->next;
-	(*indirect)->next->next = (*indirect)->next;
+	(*indirect)->next = (*indirect)->next->next;
 	ra = new Point{ *del->data };
 	delete del->data;
 	delete del;
-	return ra;*/
-
-	int count = this->element_count();
-	if (foo > count)
-	{
-		cout << "The erase place cannot be larger than isself" << endl;
-		return NULL;
-	}
-	LNode* remove, * after_next;
-	LNode* tmp = head;
-	if (foo == 0)		//假如要移除的點是head的話
-	{
-		for(int i = 0 ;i < count - 1; i++)
-		{
-			tmp = tmp->next;
-		}
-		remove = head;
-		Point* ra = new Point{*remove->data};
-		after_next = head->next;
-		tmp->next = after_next;
-		head = after_next;
-		delete remove;
-		return ra;
-	}
-	//假如要移除的點不是head的話
-	for (int i = 0; i < foo - 1; i++)
-	{
-		tmp = tmp->next;
-	}
-	after_next = tmp->next->next;
-	remove = tmp->next;
-	Point* ra = new Point{ *remove->data };
-	tmp->next = after_next;
-	delete remove;
-	//size--;
 	return ra;
 }
 

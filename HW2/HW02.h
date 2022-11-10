@@ -51,6 +51,7 @@ public:
 	void insert(Link_list*);	// insert to the last node
 	Point* erase(const unsigned int);
 	unsigned int element_count()const ;
+	// 我將這邊的element_count()後面加了一const，為了讓其他成員函式在傳參為 const link_list 的時候可以呼叫 
 	friend ostream& operator<<(ostream&, const Link_list&);
 };
 
