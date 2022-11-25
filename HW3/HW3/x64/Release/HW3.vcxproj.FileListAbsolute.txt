@@ -1,0 +1,5 @@
+D:\碩一上\修課\物件導向\作業\HW3\HW3\x64\Release\HW3.vcxproj.AssemblyReference.cache
+D:\碩一上\修課\物件導向\作業\HW3\HW3\x64\Release\HW3.Result.resources
+D:\碩一上\修課\物件導向\作業\HW3\HW3\x64\Release\HW3.Setting.resources
+D:\碩一上\修課\物件導向\作業\HW3\HW3\x64\Release\HW3.Tick_Tac_Toe.resources
+D:\碩一上\修課\物件導向\作業\HW3\HW3\x64\Release\HW3.vcxproj.GenerateResource.cache

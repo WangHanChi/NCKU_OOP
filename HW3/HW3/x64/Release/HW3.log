@@ -1,0 +1,8 @@
+﻿  Result.cpp
+  Setting.cpp
+  Tick_Tac_Toe.cpp
+D:\碩一上\修課\物件導向\作業\HW3\HW3\Tick_Tac_Toe.h(437,1): warning C4102: 'System': 未參考的標籤
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  正在產生程式碼...
+  Result.obj : 發現 MSIL 模組。MSIL 的累加連結已停用。正在執行完整連結
+  HW3.vcxproj -> D:\碩一上\修課\物件導向\作業\HW3\x64\Release\HW3.exe

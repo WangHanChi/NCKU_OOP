@@ -1,0 +1,43 @@
+  HW3.Result.resources - Embedded, ContainedInManifestFile, 
+  HW3.Setting.resources - Embedded, ContainedInManifestFile, 
+  HW3.Tick_Tac_Toe.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly HW3, Version=0.0.*, Culture=不因語言而異 (不因國別而異): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class HW3.Result: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.String, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class HW3.Setting: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    get_Player1_name(): PrivateScope, Public, Static, HideBySig
+    get_Player1_O_or_X(): PrivateScope, Public, Static, HideBySig
+    get_Player2_name(): PrivateScope, Public, Static, HideBySig
+    get_Player2_O_or_X(): PrivateScope, Public, Static, HideBySig
+    get_Who_First(): PrivateScope, Public, Static, HideBySig
+Class HW3.Tick_Tac_Toe: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean Gaming_mode : Public
+    Boolean whos_turn : Public
+    Boolean symbol : Public
+    Int32 count : Public
+    Int32 sec : Public, Static
+    Int32 min : Public, Static
+    System.String First : Public, Static
+    System.String winner : Public, Static
